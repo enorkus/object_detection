@@ -11,7 +11,7 @@ print("All train files:")
 print(len(allTrainFiles))
 
 count = 0
-numberOfTestFiles = len(allTrainFiles) * 0.1
+numberOfTestFiles = len(allTrainFiles) * 0.2
 os.mkdir(TEST_DIR)
 for fileName in allTrainFiles:
     if allTrainFiles.index(fileName) < numberOfTestFiles:
