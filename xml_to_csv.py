@@ -9,6 +9,7 @@ def xml_to_csv(path):
     for xml_file in glob.glob(path + '/*.xml'):
         tree = ET.parse(xml_file)
         root = tree.getroot()
+        print(xml_file)
         for member in root.findall('object'):
             boundBox = member.findall('bndbox')
             xmin = boundBox[0][0].text
@@ -32,7 +33,7 @@ def xml_to_csv(path):
 
 def main():
     for folder in ['train', 'test']:
-        image_path = os.path.join(os.getcwd(), ('data/' + folder))
+        image_path = os.path.join(os.getcwd(), folder)
         xml_df = xml_to_csv(image_path)
         xml_df.to_csv((folder+'_labels.csv'), index=None)
         print('Successfully converted xml to csv.')
