@@ -12,6 +12,8 @@ print(len(allTrainFiles))
 
 count = 0
 numberOfTestFiles = len(allTrainFiles) * 0.1
+if (numberOfTestFiles % 2) != 0:
+    numberOfTestFiles += 1
 os.mkdir(TEST_DIR)
 for fileName in allTrainFiles:
     if allTrainFiles.index(fileName) < numberOfTestFiles:
@@ -21,9 +23,9 @@ for fileName in allTrainFiles:
         break
 
 trainFiles = [f for f in listdir(TRAIN_DIR) if isfile(join(TRAIN_DIR, f))]
-print("Train files:")
-print(len(trainFiles))
+print("Train images:")
+print(len(trainFiles/2))
 
 testFiles = [f for f in listdir(TEST_DIR) if isfile(join(TEST_DIR, f))]
-print("Test files:")
-print(len(testFiles))
+print("Test images:")
+print(len(testFiles/2))
