@@ -23,4 +23,4 @@ print('Deleting...')
 for orphan in orphans:
     os.remove(WORKING_DIR + orphan)
 
-print('Final number of labeled images: ' + str(len([f for f in listdir(WORKING_DIR) if isfile(join(WORKING_DIR, f))])))
+print('Final number of files: ' + str(len([f for f in listdir(WORKING_DIR) if isfile(join(WORKING_DIR, f))])))
